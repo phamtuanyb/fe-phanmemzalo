@@ -25,11 +25,14 @@
 /* ── Base ── */
 html {
   scroll-behavior: smooth;
+  /* Guard: chặn cuộn ngang do tràn lẻ ở màn hình rất nhỏ (320px). overflow-x trên body
+     không tự chặn document scroll nếu html không có. clip = hidden nhưng không tạo scroll context. */
+  overflow-x: clip;
 }
 
 body {
   font-family: 'Manrope', sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ── Pulse ring animation for CTA buttons ── */

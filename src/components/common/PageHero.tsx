@@ -55,11 +55,11 @@ const PageHero = ({ title, titleEm, breadcrumbs, titleTag = 'h1' }: PageHeroProp
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
       />
-      <div className="container mx-auto px-6 flex items-center justify-between gap-6">
-        <HeadingTag className="text-[18px] font-extrabold text-white uppercase leading-none m-0 whitespace-nowrap">
+      <div className="container mx-auto px-6 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+        <HeadingTag className="text-[16px] sm:text-[18px] font-extrabold text-white uppercase leading-tight m-0">
           {renderTitle()}
         </HeadingTag>
-        <nav className="flex items-center gap-2 text-[12px] text-white/50 flex-shrink-0 flex-wrap">
+        <nav className="flex items-center gap-2 text-[12px] text-white/50 flex-wrap">
           {breadcrumbs.map((crumb, i) => (
             <span key={i} className="flex items-center gap-2">
               {i > 0 && <span className="text-white/25">›</span>}

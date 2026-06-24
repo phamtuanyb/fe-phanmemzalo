@@ -183,7 +183,7 @@ const HeaderClient = ({
     return (
         <>
             <nav className="sticky top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-xl border-b border-vs-gray-200">
-                <div className="container mx-auto px-6 h-full flex items-center justify-between gap-8">
+                <div className="container mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-3 sm:gap-8">
                     {/* Logo */}
                     <Link href="/" className="flex-shrink-0">
                         <Image

@@ -130,7 +130,7 @@ export default function XayKenhPage() {
           </div>
 
           {/* stats */}
-          <div className="mx-auto mt-12 flex max-w-xl items-center justify-center gap-8 sm:gap-12">
+          <div className="mx-auto mt-12 flex max-w-xl items-center justify-center gap-4 sm:gap-12">
             {[
               { num: '100.000+', label: 'khách hàng & đối tác' },
               { num: '15+', label: 'năm kinh nghiệm' },
@@ -138,10 +138,10 @@ export default function XayKenhPage() {
             ].map((s, i) => (
               <div
                 key={s.num}
-                className={i > 0 ? 'border-l border-vs-gray-200 pl-8 sm:pl-12' : ''}
+                className={i > 0 ? 'border-l border-vs-gray-200 pl-4 sm:pl-12' : ''}
               >
-                <div className="text-[26px] font-extrabold text-vs-dark sm:text-[30px]">{s.num}</div>
-                <div className="mt-1 text-[12.5px] text-vs-gray-600">{s.label}</div>
+                <div className="text-[22px] font-extrabold text-vs-dark sm:text-[30px]">{s.num}</div>
+                <div className="mt-1 text-[11.5px] leading-tight text-vs-gray-600 sm:text-[12.5px]">{s.label}</div>
               </div>
             ))}
           </div>
