@@ -54,12 +54,12 @@ npm run build
 ok "Build xong"
 
 # ── Bước 4: PM2 reload ──────────────────────────────────────────────────────
-log "[4/4] PM2 reload vsoftware-fe"
-if pm2 describe vsoftware-fe >/dev/null 2>&1; then
-  pm2 reload vsoftware-fe --update-env
+log "[4/4] PM2 reload phanmemzalo-fe"
+if pm2 describe phanmemzalo-fe >/dev/null 2>&1; then
+  pm2 reload phanmemzalo-fe --update-env
   ok "FE đã reload (không downtime)"
 else
-  warn "Process vsoftware-fe chưa tồn tại — khởi động lần đầu:"
+  warn "Process phanmemzalo-fe chưa tồn tại — khởi động lần đầu:"
   pm2 start ecosystem.config.js
   pm2 save
   ok "FE đã khởi động lần đầu"
@@ -68,4 +68,4 @@ fi
 echo ""
 ok "DEPLOY FE hoàn tất! Truy cập: https://vsoftware.vn"
 echo ""
-log "Xem log realtime: pm2 logs vsoftware-fe"
+log "Xem log realtime: pm2 logs phanmemzalo-fe"

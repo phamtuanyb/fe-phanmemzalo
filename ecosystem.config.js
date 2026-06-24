@@ -13,16 +13,16 @@
 //
 // Lệnh hàng ngày:
 //   pm2 status                   # xem trạng thái
-//   pm2 logs vsoftware-fe        # xem log realtime
-//   pm2 reload vsoftware-fe      # restart không downtime
-//   pm2 restart vsoftware-fe     # restart có downtime ngắn
-//   pm2 stop vsoftware-fe        # tạm dừng
+//   pm2 logs phanmemzalo-fe        # xem log realtime
+//   pm2 reload phanmemzalo-fe      # restart không downtime
+//   pm2 restart phanmemzalo-fe     # restart có downtime ngắn
+//   pm2 stop phanmemzalo-fe        # tạm dừng
 // ─────────────────────────────────────────────────────────────────────────────
 
 module.exports = {
   apps: [
     {
-      name: 'vsoftware-fe',
+      name: 'phanmemzalo-fe',
       script: 'npm',
       args: 'start',
       cwd: './',                     // chạy từ thư mục chứa ecosystem.config.js
