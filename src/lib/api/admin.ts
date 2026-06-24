@@ -367,3 +367,15 @@ export function adminUpdateTelegramConfig(config: TelegramConfigInput): Promise<
 export function adminTestTelegram(): Promise<{ data: { message: string } }> {
   return apiClient.post('/api/settings/telegram/test', {}, true)
 }
+
+// ─── Tracking: Google Analytics (GA4) + Google Search Console ──────────────────
+export interface TrackingConfig {
+  ga4Id?: string                     // VD: G-XXXXXXXXXX
+  searchConsoleVerification?: string // mã content của meta google-site-verification
+}
+export function adminGetTrackingConfig(): Promise<{ data: TrackingConfig }> {
+  return apiClient.get('/api/settings/tracking', true)
+}
+export function adminUpdateTrackingConfig(config: TrackingConfig): Promise<{ data: TrackingConfig }> {
+  return apiClient.put('/api/settings/tracking', config, true)
+}

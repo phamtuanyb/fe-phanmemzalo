@@ -118,3 +118,12 @@ export function getCommitmentsConfig(): Promise<{ data: CommitmentsConfig }> {
   return apiClient.get('/api/settings/commitments')
 }
 
+// Tracking: Google Analytics (GA4) + Google Search Console verification
+export interface TrackingConfig {
+  ga4Id?: string                     // VD: G-XXXXXXXXXX
+  searchConsoleVerification?: string // mã content trong meta google-site-verification
+}
+export function getTrackingConfig(): Promise<{ data: TrackingConfig }> {
+  return apiClient.get('/api/settings/tracking')
+}
+

@@ -59,7 +59,7 @@ export default function AdminLoginPage() {
               <path d="M10.933 19.231l-7.668-4.13-1.37.739a.75.75 0 000 1.32l9.75 5.25c.221.12.489.12.71 0l9.75-5.25a.75.75 0 000-1.32l-1.37-.738-7.668 4.13a2.25 2.25 0 01-2.134-.001z" />
             </svg>
           </div>
-          <h1 className="text-xl font-bold text-white">VSoftware CMS</h1>
+          <h1 className="text-xl font-bold text-white">MKT Software CMS</h1>
           <p className="text-sm text-slate-400 mt-1">Đăng nhập để quản trị</p>
         </div>
 
@@ -70,7 +70,7 @@ export default function AdminLoginPage() {
               <label className="block text-sm font-medium text-slate-300 mb-1.5">Email</label>
               <input
                 type="email"
-                placeholder="admin@vitechgroup.com"
+                placeholder="Nhập email đăng nhập"
                 autoComplete="email"
                 className="w-full rounded-xl border border-white/10 bg-white/8 px-4 py-2.5 text-sm text-black
                            placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500
@@ -127,7 +127,7 @@ export default function AdminLoginPage() {
         </div>
 
         <p className="text-center text-xs text-slate-600 mt-6">
-          © 2025 VSoftware · Hệ thống quản trị nội dung
+          © 2025 MKT Software · Hệ thống quản trị nội dung
         </p>
       </div>
     </div>
