@@ -1,3 +1,6 @@
+// API backend (BE) — ảnh upload phục vụ ở ${API_URL}/uploads. Dùng cho rewrite proxy.
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
@@ -13,11 +16,17 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'picsum.photos' },
-      { protocol: 'http', hostname: '192.168.1.18' },
       { protocol: 'http', hostname: 'localhost' },
-      { protocol: 'https', hostname: 'api.vsoftware.vn' },
-      { protocol: 'https', hostname: 'vsoftware.vn' },
+      { protocol: 'https', hostname: 'api.phanmemzalo.com' },
+      { protocol: 'https', hostname: 'phanmemzalo.com' },
     ],
+  },
+  // Ảnh upload lưu ở BE (/uploads). Dữ liệu dùng URL TƯƠNG ĐỐI /uploads/... → proxy sang BE.
+  // Nhờ vậy ảnh chạy đúng ở MỌI domain (local & production), không phụ thuộc host tuyệt đối.
+  async rewrites() {
+    return [
+      { source: '/uploads/:path*', destination: `${API_URL}/uploads/:path*` },
+    ]
   },
   async redirects() {
     return [
