@@ -49,6 +49,28 @@ export async function generateMetadata(): Promise<Metadata> {
   return meta
 }
 
+// JSON-LD Organization + WebSite — giúp Google nhận diện thương hiệu (logo, sitelinks search).
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: siteName,
+      url: siteUrl,
+      logo: `${siteUrl}/logo-ngang.png`,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      name: siteName,
+      url: siteUrl,
+      inLanguage: 'vi-VN',
+      publisher: { '@id': `${siteUrl}/#organization` },
+    },
+  ],
+}
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const tracking = await readTracking()
   // Ưu tiên ID nhập từ admin → env (build-time) → tắt.
@@ -57,6 +79,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="vi" className={`${manrope.variable} ${beVietnamPro.variable}`}>
       <body className={`${manrope.className} bg-white text-vs-dark antialiased overflow-x-hidden`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
         {children}
         {gaId && (
           <>
