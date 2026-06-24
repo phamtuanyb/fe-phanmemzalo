@@ -7,6 +7,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // 1. Static routes
   const staticRoutes = [
     '',
+    '/xaykenh',
+    '/xaykenh/xaykenhai',
+    '/xaykenh/mktviral',
+    '/xaykenh/mktpage',
+    '/xaykenh/mktaffiliate',
     '/introduction',
     '/lien-he',
     '/tin-tuc',
@@ -16,7 +21,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${siteUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'daily' as const,
-    priority: route === '' ? 1.0 : 0.8,
+    // Trang chủ 1.0; nhóm sản phẩm Xây Kênh 0.9 (ưu tiên cao); còn lại 0.8
+    priority: route === '' ? 1.0 : route.startsWith('/xaykenh') ? 0.9 : 0.8,
   }))
 
   try {
