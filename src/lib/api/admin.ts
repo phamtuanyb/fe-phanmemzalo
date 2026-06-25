@@ -209,6 +209,33 @@ export function adminImportMediaFromUrl(
   return apiClient.post('/api/admin/media/import-url', { url, ...metadata }, true)
 }
 
+// ─── Import bài viết từ Word (.docx) ─────────────────────────────────────────
+
+export interface ImportDocxItem {
+  file: string
+  ok: boolean
+  postId?: number
+  slug?: string
+  error?: string
+}
+
+export interface ImportDocxResult {
+  total: number
+  success: number
+  failed: number
+  items: ImportDocxItem[]
+}
+
+export function adminImportDocx(
+  files: File[],
+  categoryId?: number,
+): Promise<ApiResponse<ImportDocxResult>> {
+  const formData = new FormData()
+  files.forEach((f) => formData.append('files', f))
+  if (categoryId) formData.append('categoryId', String(categoryId))
+  return apiClient.upload('/api/admin/posts/import-docx', formData)
+}
+
 export function adminDeleteMedia(id: number): Promise<void> {
   return apiClient.delete(`/api/admin/media/${id}`, true)
 }
