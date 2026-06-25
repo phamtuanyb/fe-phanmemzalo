@@ -39,8 +39,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# package managers
-package-lock.json
+# package managers — GIỮ package-lock.json trong repo vì Dockerfile dùng `npm ci`
+# (npm ci bắt buộc có lockfile). Chỉ ignore yarn.lock (dự án dùng npm).
 yarn.lock
 
 # editor

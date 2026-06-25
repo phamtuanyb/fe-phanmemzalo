@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky",
+    "prepare": "husky || true",
     "doctor": "react-doctor",
     "typecheck": "tsc --noEmit",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json"
