@@ -69,6 +69,7 @@ export default function PostEditor({ post }: PostEditorProps) {
       slug: post?.slug ?? '',
       excerpt: post?.excerpt ?? '',
       content: post?.content ?? '',
+      thumbnail: post?.thumbnail ?? '',
       categoryId: post?.categoryId ?? null,
       seoTitle: post?.seoTitle ?? '',
       seoDescription: post?.seoDescription ?? '',
@@ -123,6 +124,8 @@ export default function PostEditor({ post }: PostEditorProps) {
   }
 
   const onDraft = handleSubmit((data) => submit(data, 'draft'))
+  // Khi đang sửa: "Cập nhật" lưu thay đổi và GIỮ NGUYÊN trạng thái hiện tại (không ép xuất bản).
+  const onUpdate = handleSubmit((data) => submit(data, (post?.status ?? 'draft') as PostStatus))
   const onPublish = handleSubmit(async (data) => {
     const missing = [!data.categoryId && 'chọn danh mục', !data.thumbnail && 'tải ảnh đại diện'].filter(Boolean)
 
@@ -183,6 +186,7 @@ export default function PostEditor({ post }: PostEditorProps) {
               post={post}
               saving={saving}
               onDraft={onDraft}
+              onUpdate={onUpdate}
               onPublish={onPublish}
               handlePreview={handlePreview}
             />
