@@ -1,15 +1,13 @@
 import type { Metadata } from 'next'
-import ProductLanding from '../_products/ProductLanding'
-import { PRODUCTS } from '../_products/data'
-
-const product = PRODUCTS.mktpage
+import MktPageLanding from './MktPageLanding'
 
 export const metadata: Metadata = {
-  title: `${product.name} — ${product.tagline} | MKT Software`,
-  description: product.description,
-  alternates: { canonical: `/xaykenh/${product.slug}` },
+  title: 'MKT Page — Vận hành hàng trăm Fanpage từ một Dashboard duy nhất | MKT Software',
+  description:
+    'MKT Page giúp doanh nghiệp, Agency và đội ngũ Marketing quản lý tập trung toàn bộ hệ thống Fanpage Facebook: đăng bài hàng loạt, lập lịch, đổi thông tin Page và theo dõi tiến trình từ một Dashboard.',
+  alternates: { canonical: '/xaykenh/mktpage' },
 }
 
 export default function Page() {
-  return <ProductLanding product={product} />
+  return <MktPageLanding />
 }
