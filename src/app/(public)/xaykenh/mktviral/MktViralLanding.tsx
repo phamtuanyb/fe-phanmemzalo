@@ -60,7 +60,7 @@ const COMPARE = [
   { label: 'Tìm kiếm video', manual: 'Thủ công từng video', mkt: 'Tự động hàng nghìn' },
   { label: 'Tải video', manual: 'Từng file một', mkt: 'Hàng loạt một lần' },
   { label: 'Chỉnh sửa', manual: 'Mở từng video', mkt: 'Áp dụng hàng loạt' },
-  { label: 'Xuất video', manual: 'Render lần lượt', mkt: 'Song song GPU' },
+  { label: 'Xuất video', manual: 'Render lần lượt', mkt: 'Song song nhiều video' },
   { label: 'Thời gian', manual: 'Nhiều ngày', mkt: 'Vài phút' },
   { label: 'Khối lượng', manual: 'Vài chục', mkt: 'Hàng nghìn' },
   { label: 'Hiệu suất', manual: 'Phụ thuộc nhân sự', mkt: 'X10 sản lượng' },
