@@ -3,6 +3,9 @@ import TrialModalButton from '../TrialModalButton'
 import { ChannelIcon, type Channel } from '../_shared/channels'
 import Testimonials, { type Testimonial } from './_components/Testimonials'
 import StudioImage from './_components/StudioImage'
+import DemoScreen from './_components/DemoScreen'
+
+const DEMO_VIDEO = 'https://www.youtube.com/watch?v=Y6JvnuAXIgM'
 
 const SOURCE = 'MKT Viral'
 
@@ -412,13 +415,7 @@ export default function MktViralLanding() {
         <H2 className="mb-5">Xem MKT Viral vận hành thực tế</H2>
         <div className="mx-auto max-w-[880px]">
           <div className="rounded-t-[18px] border-2 border-b-0 px-3.5 pt-3.5" style={{ borderColor: '#C2CCD8', background: 'linear-gradient(160deg,#E7ECF3,#D4DCE7)', boxShadow: '0 24px 60px rgba(7,27,47,.16)' }}>
-            <div className="relative aspect-video overflow-hidden rounded-[10px]" style={{ background: 'radial-gradient(120% 120% at 30% 20%,#0a2342,#071B2F)' }}>
-              <div className="absolute inset-0" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px)', backgroundSize: '40px 40px' }} />
-              <button className="absolute left-1/2 top-1/2 grid h-[84px] w-[84px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full text-white transition-transform hover:scale-105" style={{ background: 'linear-gradient(135deg,#0A84FF,#0057D9)', boxShadow: '0 14px 38px rgba(10,132,255,.5)' }}>
-                <span className="ml-1 text-[26px]">▶</span>
-              </button>
-              <span className="absolute bottom-3.5 left-4 font-mono text-[12px] text-[#9fb0c2]">MKT_Viral_demo_2026.mp4 · 3:42</span>
-            </div>
+            <DemoScreen videoUrl={DEMO_VIDEO} caption="MKT Viral · Demo 2026" />
           </div>
           <div className="h-3.5 rounded-b-[4px]" style={{ background: 'linear-gradient(#C2CCD8,#D4DCE7)' }} />
           <div className="mx-auto h-2.5 w-[118%] -translate-x-[7.5%] rounded-b-[14px]" style={{ background: 'linear-gradient(#AEB9C7,#D4DCE7)' }} />
