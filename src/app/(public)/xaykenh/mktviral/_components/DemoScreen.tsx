@@ -2,16 +2,24 @@
 
 import { useState } from 'react'
 
-function ytEmbed(url: string): string | null {
+function ytId(url: string): string | null {
   if (!url) return null
-  if (url.includes('/embed/')) return url
-  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|live\/))([\w-]{6,})/)
-  return m ? `https://www.youtube.com/embed/${m[1]}` : null
+  const m = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|live\/|embed\/))([\w-]{6,})/)
+  return m ? m[1] : null
 }
 
 export default function DemoScreen({ videoUrl, caption }: { videoUrl: string; caption?: string }) {
   const [playing, setPlaying] = useState(false)
-  const embed = ytEmbed(videoUrl)
+  const [thumbLevel, setThumbLevel] = useState(0) // 0=maxres, 1=hq, 2=không có
+  const id = ytId(videoUrl)
+  const embed = id ? `https://www.youtube.com/embed/${id}` : null
+  const thumb = id
+    ? thumbLevel === 0
+      ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
+      : thumbLevel === 1
+        ? `https://img.youtube.com/vi/${id}/hqdefault.jpg`
+        : ''
+    : ''
 
   return (
     <div className="relative aspect-video overflow-hidden rounded-[10px]" style={{ background: 'radial-gradient(120% 120% at 30% 20%,#0a2342,#071B2F)' }}>
@@ -25,10 +33,21 @@ export default function DemoScreen({ videoUrl, caption }: { videoUrl: string; ca
         />
       ) : (
         <>
-          <div
-            className="absolute inset-0"
-            style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px)', backgroundSize: '40px 40px' }}
-          />
+          {thumb ? (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={thumb}
+              alt={caption || 'Demo MKT Viral'}
+              onError={() => setThumbLevel((l) => l + 1)}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          ) : (
+            <div
+              className="absolute inset-0"
+              style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px)', backgroundSize: '40px 40px' }}
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/45" />
           <button
             type="button"
             onClick={() => embed && setPlaying(true)}
@@ -38,7 +57,7 @@ export default function DemoScreen({ videoUrl, caption }: { videoUrl: string; ca
           >
             <span className="ml-1 text-[26px]">▶</span>
           </button>
-          {caption && <span className="absolute bottom-3.5 left-4 font-mono text-[12px] text-[#9fb0c2]">{caption}</span>}
+          {caption && <span className="absolute bottom-3.5 left-4 font-mono text-[12px] text-white/85">{caption}</span>}
         </>
       )}
     </div>
