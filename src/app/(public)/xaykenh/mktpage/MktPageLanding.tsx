@@ -13,7 +13,6 @@ const DEMO_VIDEO = 'https://www.youtube.com/watch?v=gEONfL55rF8'
 
 const C = { blue: '#0A84FF', blueD: '#0057D9', orange: '#FF7A00', orangeL: '#FF9500', dark: '#0F172A', muted: '#64748B', subtle: '#94A3B8', line: '#EDF1F7', line2: '#DDE4EE', bg: '#F7FAFF', green: '#16A34A', red: '#E11D48' }
 
-const TRUST = ['30.000+ khách hàng', '10 năm+ phát triển', 'Hỗ trợ 24/7', 'Tối ưu cho quy mô lớn']
 const ECOSYSTEM = ['MKT Care', 'MKT UID', 'MKT Page', 'MKT Zmarketing', 'MKT TikPro']
 
 const PAINS: { n: string; Icon: LucideIcon; text: string }[] = [
@@ -121,11 +120,6 @@ export default function MktPageLanding() {
                 <span className="grid h-[30px] w-[30px] place-items-center rounded-full bg-[#EAF3FF]"><Play className="h-3 w-3 fill-[#0A84FF] text-[#0A84FF]" /></span>
                 Xem video demo
               </Link>
-            </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2.5">
-              {TRUST.map((t) => (
-                <div key={t} className="flex items-center gap-2 text-[14px] font-medium text-[#475569]"><Check className="h-[17px] w-[17px] text-[#16A34A]" strokeWidth={2.6} /> {t}</div>
-              ))}
             </div>
           </div>
 
