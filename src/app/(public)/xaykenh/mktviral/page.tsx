@@ -1,15 +1,13 @@
 import type { Metadata } from 'next'
-import ProductLanding from '../_products/ProductLanding'
-import { PRODUCTS } from '../_products/data'
-
-const product = PRODUCTS.mktviral
+import MktViralLanding from './MktViralLanding'
 
 export const metadata: Metadata = {
-  title: `${product.name} — ${product.tagline} | MKT Software`,
-  description: product.description,
-  alternates: { canonical: `/xaykenh/${product.slug}` },
+  title: 'MKT Viral — Khai thác & sản xuất hàng loạt video đa nền tảng | MKT Software',
+  description:
+    'MKT Viral giúp bạn tìm kiếm video từ nhiều nền tảng, tải xuống hàng loạt, chỉnh sửa tự động và xuất bản chỉ trong vài phút. Một thiết lập — hàng nghìn video.',
+  alternates: { canonical: '/xaykenh/mktviral' },
 }
 
 export default function Page() {
-  return <ProductLanding product={product} />
+  return <MktViralLanding />
 }

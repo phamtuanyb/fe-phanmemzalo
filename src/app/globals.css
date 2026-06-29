@@ -170,3 +170,11 @@ body { @apply antialiased; }
 .animate-row-fade-in {
   animation: rowFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+/* Landing MKT Viral (/xaykenh/mktviral) — thẻ trắng + kính mờ */
+.mv-card { background:#fff; border:1px solid rgba(7,27,47,.08); box-shadow:0 1px 3px rgba(7,27,47,.06); }
+.mv-glass { background:rgba(255,255,255,.72); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(7,27,47,.08); box-shadow:0 24px 60px rgba(7,27,47,.12); }
+
+/* Băng truyền logo nền tảng (MKT Viral) */
+@keyframes mv-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.mv-marquee-track { display: flex; width: max-content; align-items: center; animation: mv-marquee 26s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .mv-marquee-track { animation: none; } }

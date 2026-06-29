@@ -406,3 +406,12 @@ export function adminGetTrackingConfig(): Promise<{ data: TrackingConfig }> {
 export function adminUpdateTrackingConfig(config: TrackingConfig): Promise<{ data: TrackingConfig }> {
   return apiClient.put('/api/settings/tracking', config, true)
 }
+
+// ─── Landing Xây Kênh AI (site_settings key "xaykenhai") ───────────────────────
+import type { XayKenhAiConfig } from '@/app/(public)/xaykenh/xaykenhai/config'
+export function adminGetXayKenhAiConfig(): Promise<{ data: Partial<XayKenhAiConfig> | null }> {
+  return apiClient.get('/api/settings/xaykenhai', true)
+}
+export function adminUpdateXayKenhAiConfig(config: XayKenhAiConfig): Promise<{ data: XayKenhAiConfig }> {
+  return apiClient.put('/api/settings/xaykenhai', config, true)
+}

@@ -1,5 +1,6 @@
 import { apiClient } from './client'
 import type { Post, Category, PaginatedResponse, ApiResponse, Menu, FooterConfig, HomepageConfig, ContactConfig, CommitmentsConfig } from '@/types'
+import type { XayKenhAiConfig } from '@/app/(public)/xaykenh/xaykenhai/config'
 
 export interface GetPostsParams {
   page?: number
@@ -125,5 +126,10 @@ export interface TrackingConfig {
 }
 export function getTrackingConfig(): Promise<{ data: TrackingConfig }> {
   return apiClient.get('/api/settings/tracking')
+}
+
+// Config landing /xaykenh/xaykenhai (site_settings key "xaykenhai")
+export function getXayKenhAiConfig(): Promise<{ data: Partial<XayKenhAiConfig> | null }> {
+  return apiClient.get('/api/settings/xaykenhai')
 }
 
