@@ -284,7 +284,7 @@ export default function XayKenhAiLanding({ config }: { config: XayKenhAiConfig }
             <div className="pointer-events-none absolute inset-0" style={{ background: 'radial-gradient(80% 120% at 80% 0%, rgba(255,255,255,.18) 0%, rgba(255,255,255,0) 50%)' }} />
             <div className="relative">
               <Eyebrow color="blue"><span className="text-white/85">{cta.eyebrow}</span></Eyebrow>
-              <h2 className="mx-auto mt-3 max-w-2xl text-[clamp(28px,4.4vw,46px)] font-extrabold tracking-tight text-white">{cta.heading}</h2>
+              <h2 className="mx-auto mt-3 text-[clamp(24px,4.4vw,46px)] font-extrabold tracking-tight text-white whitespace-normal sm:whitespace-nowrap">{cta.heading}</h2>
               <p className="mx-auto mt-4 max-w-xl text-[17px] leading-[1.6] text-white/90">{cta.subtitle}</p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
                 <TrialModalButton
