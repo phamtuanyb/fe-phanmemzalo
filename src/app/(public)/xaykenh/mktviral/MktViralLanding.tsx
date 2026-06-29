@@ -10,12 +10,6 @@ const DEMO_VIDEO = 'https://www.youtube.com/watch?v=Y6JvnuAXIgM'
 const SOURCE = 'MKT Viral'
 
 // ── Dữ liệu ───────────────────────────────────────────────────────────────────
-const TRUST = [
-  { v: '30.000+', l: 'khách hàng' },
-  { v: '500M+', l: 'video đã xử lý' },
-  { v: '4.9★', l: 'đánh giá' },
-  { v: 'Trọn đời', l: 'hỗ trợ' },
-]
 const HERO_CHANNELS: Channel[] = ['tiktok', 'facebook', 'youtube', 'instagram']
 const HERO_VIDEOS = [
   { c1: '#0a2342', c2: '#0A84FF', v: '1.2M' }, { c1: '#2a1a3a', c2: '#9b59b6', v: '847K' }, { c1: '#1a2a2a', c2: '#16a085', v: '2.1M' },
@@ -138,14 +132,6 @@ export default function MktViralLanding() {
               <span className="grid h-[26px] w-[26px] place-items-center rounded-full text-[11px]" style={{ background: 'rgba(255,122,0,.14)', color: C.orange }}>▶</span>
               Xem video Demo
             </Link>
-          </div>
-          <div className="flex flex-wrap gap-x-8 gap-y-5 border-t pt-6" style={{ borderColor: 'rgba(7,27,47,.09)' }}>
-            {TRUST.map((t) => (
-              <div key={t.l}>
-                <div className="font-mono text-[23px] font-bold text-[#071B2F]">{t.v}</div>
-                <div className="mt-0.5 text-[12.5px] text-[#8190A0]">{t.l}</div>
-              </div>
-            ))}
           </div>
         </div>
 
