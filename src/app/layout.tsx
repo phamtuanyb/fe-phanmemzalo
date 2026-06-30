@@ -43,9 +43,8 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   }
   // Google Search Console: render <meta name="google-site-verification" content="...">
-  if (tracking.searchConsoleVerification) {
-    meta.verification = { google: tracking.searchConsoleVerification }
-  }
+  const gscKey = tracking.searchConsoleVerification || 'OJ7R_YBgqO0wFNTzE68IFG9MlkjgvFBbih9wkR-hMCs'
+  meta.verification = { google: gscKey }
   return meta
 }
 
@@ -74,7 +73,7 @@ const orgSchema = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const tracking = await readTracking()
   // Ưu tiên ID nhập từ admin → env (build-time) → tắt.
-  const gaId = tracking.ga4Id || process.env.NEXT_PUBLIC_GA_ID || ''
+  const gaId = tracking.ga4Id || process.env.NEXT_PUBLIC_GA_ID || 'G-TWNCN1ZYDX'
 
   return (
     <html lang="vi" className={`${manrope.variable} ${beVietnamPro.variable}`}>
