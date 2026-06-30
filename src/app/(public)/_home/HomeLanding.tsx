@@ -81,7 +81,7 @@ export default function HomeLanding({ config = ZM_DEFAULTS, newsPosts = [] }: { 
               ))}
             </div>
             <div className="hero-ctas reveal reveal-d2">
-              <a href={c.links.register} className="btn btn-primary">{c.hero.ctaPrimary} <ArrowRight className="ic" /></a>
+              <a href={c.links.register} data-open-trial-modal="" className="btn btn-primary">{c.hero.ctaPrimary} <ArrowRight className="ic" /></a>
               <a href="#video-demo" className="btn btn-ghost"><Play className="ic" /> {c.hero.ctaSecondary}</a>
             </div>
             <div className="hero-proof reveal reveal-d3">
@@ -258,7 +258,7 @@ export default function HomeLanding({ config = ZM_DEFAULTS, newsPosts = [] }: { 
                   )
                 })}
               </ul>
-              <div className="sol-cta"><a href={c.links.register} className="btn btn-primary">{c.solution.cta} <ArrowRight className="ic" /></a></div>
+              <div className="sol-cta"><a href={c.links.register} data-open-trial-modal="" className="btn btn-primary">{c.solution.cta} <ArrowRight className="ic" /></a></div>
             </div>
             <div className="solution-visual reveal reveal-d1">
               {c.solution.visual.map((v) => {
@@ -494,7 +494,7 @@ export default function HomeLanding({ config = ZM_DEFAULTS, newsPosts = [] }: { 
             <div className="urgency reveal"><Clock className="ic" />{c.finalCta.urgency}</div>
             <h2 className="reveal reveal-d1">{c.finalCta.titleA}<span className="hl">{c.finalCta.titleHl}</span></h2>
             <p className="reveal reveal-d1">{c.finalCta.sub}</p>
-            <div className="reveal reveal-d2"><a href={c.links.register} className="btn btn-primary" style={{ fontSize: 18, padding: '18px 44px' }}>{c.finalCta.cta} <ArrowRight className="ic" /></a></div>
+            <div className="reveal reveal-d2"><a href={c.links.register} data-open-trial-modal="" className="btn btn-primary" style={{ fontSize: 18, padding: '18px 44px' }}>{c.finalCta.cta} <ArrowRight className="ic" /></a></div>
             <div className="guarantee reveal reveal-d2">
               {c.finalCta.guarantees.map((g) => (
                 <span key={g}><CheckCircle2 className="ic" />{g}</span>
@@ -506,7 +506,7 @@ export default function HomeLanding({ config = ZM_DEFAULTS, newsPosts = [] }: { 
 
       {/* ===== FLOAT MOBILE CTA ===== */}
       <div className="float-cta">
-        <a href={c.links.register}><Zap className="ic" />{c.hero.ctaPrimary}</a>
+        <a href={c.links.register} data-open-trial-modal=""><Zap className="ic" />{c.hero.ctaPrimary}</a>
       </div>
     </div>
   )

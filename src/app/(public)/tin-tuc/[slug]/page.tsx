@@ -36,6 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+export const revalidate = 300
+
 const ArticleLayout = async ({ params }: Props) => {
   const news = await getPost(params.slug).then(res => res.data).catch(() => null);
   const relatedResponse = await getPosts({ limit: 3 }).catch(() => null);

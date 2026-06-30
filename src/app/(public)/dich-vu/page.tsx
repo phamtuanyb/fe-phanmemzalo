@@ -4,6 +4,8 @@ import { getCategoryPosts } from '@/lib/api/public'
 import { getEmojiForPost } from '@/lib/public-content'
 import { SERVICES_SLUGS, SERVICES_URL } from '@/constants/app.constants'
 
+export const revalidate = 300
+
 export const metadata: Metadata = {
   title: 'Dịch vụ — MKT Software',
   description:

@@ -1,16 +1,17 @@
 import type { Metadata } from 'next'
 import HomeLanding from './_home/HomeLanding'
+import TrialModal from './_home/TrialModal'
 import { mergeZmConfig, type ZmHomeConfig } from './_home/config'
 import { getZmHomeConfig, getCategoryPosts } from '@/lib/api/public'
 import { NEWS_SLUGS } from '@/constants/app.constants'
 
 export const metadata: Metadata = {
-  title: 'ZMarketing — Biến Zalo thành phòng kinh doanh tự động',
+  title: 'Phần Mềm Zalo ZMarketing - Giải Pháp Marketing Zalo Cho Doanh Nghiệp',
   description:
     'Nền tảng quản lý hàng trăm tài khoản Zalo: hộp thư hợp nhất, CRM gắn tag khách hàng, gửi tin hàng loạt an toàn và báo cáo hiệu suất từng nhân viên. Dùng thử miễn phí 7 ngày.',
 }
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 60
 
 export default async function HomePage() {
   // Đọc config admin lưu (key zm-homepage). Chưa có thì dùng mặc định.
@@ -21,5 +22,10 @@ export default async function HomePage() {
   ])
   const config: ZmHomeConfig = mergeZmConfig(res?.data as Partial<ZmHomeConfig> | null)
   const newsPosts = newsRes?.data ?? []
-  return <HomeLanding config={config} newsPosts={newsPosts} />
+  return (
+    <>
+      <HomeLanding config={config} newsPosts={newsPosts} />
+      <TrialModal />
+    </>
+  )
 }

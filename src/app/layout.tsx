@@ -19,8 +19,8 @@ const beVietnamPro = Be_Vietnam_Pro({
   display: 'swap',
 })
 
-const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'MKT Software'
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'ZMarketing'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://phanmemzalo.com'
 
 // Tracking config (GA4 + Search Console) đọc từ admin → DB. Fallback an toàn nếu chưa cấu hình.
 async function readTracking() {
@@ -33,12 +33,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const tracking = await readTracking()
   const meta: Metadata = {
     metadataBase: new URL(siteUrl),
-    title: { default: 'MKT Software — Phần mềm theo yêu cầu cho SMEs', template: `%s | ${siteName}` },
+    title: { default: 'ZMarketing — Biến Zalo thành phòng kinh doanh tự động', template: `%s | ${siteName}` },
     description:
-      'MKT Software xây dựng phần mềm quản lý theo yêu cầu cho doanh nghiệp vừa và nhỏ: spa, nhà hàng, phòng khám, bán lẻ, logistics. AI Agent tự động hóa vận hành.',
+      'Nền tảng quản lý hàng trăm tài khoản Zalo: hộp thư hợp nhất, CRM gắn tag khách hàng, gửi tin hàng loạt an toàn và báo cáo hiệu suất từng nhân viên. Dùng thử miễn phí 7 ngày.',
     openGraph: {
       siteName,
       type: 'website',
+      locale: 'vi_VN',
+      images: ['/logo-ngang.png'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      site: '@zmarketing_vn',
       images: ['/logo-ngang.png'],
     },
   }
