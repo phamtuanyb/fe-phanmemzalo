@@ -5,11 +5,13 @@ import { ArrowRight } from 'lucide-react'
 import TrialModalButton from './TrialModalButton'
 import { ChannelIcon, type Channel } from './_shared/channels'
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://phanmemzalo.com'
+
 export const metadata: Metadata = {
   title: 'Phần mềm Xây Kênh — Bộ công cụ xây kênh online & bán hàng | MKT Software',
   description:
     '4 sản phẩm chủ lực giúp bạn sản xuất nội dung, nuôi kênh và bán hàng đa nền tảng: Xây Kênh AI, MKT Viral, MKT Page, MKT Affiliate — tự động hoá quy trình 24/7.',
-  alternates: { canonical: '/xaykenh' },
+  alternates: { canonical: `${siteUrl}/xaykenh` },
 }
 
 const REGISTER = 'https://khachhang.phanmemmkt.vn/vi/register'
@@ -69,8 +71,35 @@ const PRODUCTS: Product[] = [
   },
 ]
 
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Bộ công cụ Xây Kênh — MKT Software',
+  url: `${siteUrl}/xaykenh`,
+  numberOfItems: PRODUCTS.length,
+  itemListElement: PRODUCTS.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: p.name,
+    description: p.desc,
+    url: `${siteUrl}${p.detailHref}`,
+  })),
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Trang chủ', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Xây Kênh', item: `${siteUrl}/xaykenh` },
+  ],
+}
+
 export default function XayKenhPage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
     <div className="bg-vs-bg">
       {/* ===== HERO (nền sáng, đồng bộ trang chủ) ===== */}
       <section
@@ -218,5 +247,6 @@ export default function XayKenhPage() {
         </div>
       </section>
     </div>
+    </>
   )
 }

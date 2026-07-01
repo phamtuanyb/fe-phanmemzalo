@@ -6,10 +6,13 @@ import { SERVICES_SLUGS, SERVICES_URL } from '@/constants/app.constants'
 
 export const revalidate = 300
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://phanmemzalo.com'
+
 export const metadata: Metadata = {
   title: 'Dịch vụ — MKT Software',
   description:
     'Toàn bộ dịch vụ MKT Software: Phần mềm vận hành, theo ngành nghề, thiết kế web & nền tảng. Triển khai theo yêu cầu cho SMEs.',
+  alternates: { canonical: `${siteUrl}/dich-vu` },
 }
 
 export default async function ServicesIndexPage() {

@@ -79,6 +79,17 @@ const ArticleLayout = async ({ params }: Props) => {
     notFound()
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Trang chủ', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Tin tức', item: `${siteUrl}/tin-tuc` },
+      ...(news.category ? [{ '@type': 'ListItem', position: 3, name: news.category.name, item: `${siteUrl}/chuyen-muc/${news.category.slug}` }] : []),
+      { '@type': 'ListItem', position: news.category ? 4 : 3, name: news.title, item: `${siteUrl}/tin-tuc/${params.slug}` },
+    ],
+  }
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -106,6 +117,7 @@ const ArticleLayout = async ({ params }: Props) => {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
