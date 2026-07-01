@@ -12,11 +12,13 @@ const manrope = Manrope({
 })
 
 // Font cho landing trang chủ (mẫu ZMarketing) — expose qua biến --font-bvp
+// preload:false → không thêm vào critical resource chain (font chỉ cần ở trang chủ)
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ['latin', 'vietnamese'],
   weight: ['400', '700', '800'],
   variable: '--font-bvp',
   display: 'swap',
+  preload: false,
 })
 
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'ZMarketing'

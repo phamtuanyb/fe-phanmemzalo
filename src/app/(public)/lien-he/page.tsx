@@ -2,9 +2,9 @@
 
 import PageHero from '@/components/common/PageHero';
 import { getContactConfig, submitContact } from '@/lib/api/public';
+import type { ContactConfig } from '@/types';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import type { ContactConfig } from '@/types';
 
 const FALLBACK_CONFIG: ContactConfig = {
   form: {
@@ -12,13 +12,10 @@ const FALLBACK_CONFIG: ContactConfig = {
     description:
       'Không ràng buộc. Không phí tư vấn. MKT Software sẽ phân tích bài toán và đề xuất giải pháp phù hợp nhất — dù bạn có chọn chúng tôi hay không.',
     needs: [
-      'Phần mềm quản lý theo ngành (spa, nhà hàng, phòng khám...)',
-      'CRM & Quản lý bán hàng',
-      'App bán hàng đa kênh / Mobile App',
-      'AI Agent & Automation',
-      'Website & Landing Page',
-      'Tích hợp hệ thống (MISA, Zalo, ngân hàng...)',
-      'Tư vấn chuyển đổi số toàn diện',
+      "Phần mềm Xây kênh AI",
+      "Phần mềm MKT Viral",
+      "Phần mềm MKT Page",
+      "Phần mềm MKT Affiliate",
       'Khác',
     ],
     submitText: 'Gửi yêu cầu tư vấn',

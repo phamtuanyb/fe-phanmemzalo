@@ -1,13 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { adminGetContactConfig, adminUpdateContactConfig } from '@/lib/api/admin'
+import AdminPageHeader from '@/components/admin/AdminPageHeader';
+import { adminGetContactConfig, adminUpdateContactConfig } from '@/lib/api/admin';
 import type {
-  ContactConfig,
-  ContactOffice,
-  WorkingHourSlot,
-} from '@/types'
-import AdminPageHeader from '@/components/admin/AdminPageHeader'
+    ContactConfig,
+    ContactOffice,
+    WorkingHourSlot,
+} from '@/types';
+import { useEffect, useState } from 'react';
 
 // ─── Default config (dùng khi DB chưa có) ────────────────────────────────────
 
@@ -17,13 +17,10 @@ const DEFAULT_CONFIG: ContactConfig = {
     description:
       'Không ràng buộc. Không phí tư vấn. MKT Software sẽ phân tích bài toán và đề xuất giải pháp phù hợp nhất — dù bạn có chọn chúng tôi hay không.',
     needs: [
-      'Phần mềm quản lý theo ngành (spa, nhà hàng, phòng khám...)',
-      'CRM & Quản lý bán hàng',
-      'App bán hàng đa kênh / Mobile App',
-      'AI Agent & Automation',
-      'Website & Landing Page',
-      'Tích hợp hệ thống (MISA, Zalo, ngân hàng...)',
-      'Tư vấn chuyển đổi số toàn diện',
+      "Phần mềm Xây kênh AI",
+      "Phần mềm MKT Viral",
+      "Phần mềm MKT Page",
+      "Phần mềm MKT Affiliate",
       'Khác',
     ],
     submitText: 'Gửi yêu cầu tư vấn',

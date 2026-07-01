@@ -1,18 +1,15 @@
 'use client'
-import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { submitContact } from '@/lib/api/public'
-import { X } from 'lucide-react'
+import { submitContact } from '@/lib/api/public';
+import { X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 const NEEDS = [
   'Phần mềm Zalo Marketing (ZMarketing)',
-  'Phần mềm quản lý theo ngành (spa, nhà hàng, phòng khám...)',
-  'CRM & Quản lý bán hàng',
-  'App bán hàng đa kênh / Mobile App',
-  'AI Agent & Automation',
-  'Website & Landing Page',
-  'Tích hợp hệ thống (MISA, Zalo, ngân hàng...)',
-  'Tư vấn chuyển đổi số toàn diện',
+  "Phần mềm Xây kênh AI",
+  "Phần mềm MKT Viral",
+  "Phần mềm MKT Page",
+  "Phần mềm MKT Affiliate",
   'Khác',
 ]
 
