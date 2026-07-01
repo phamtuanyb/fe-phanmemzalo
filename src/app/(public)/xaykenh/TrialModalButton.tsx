@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { X, Loader2, CheckCircle2, Rocket, User, Phone, Mail, MessageSquare } from 'lucide-react'
 import { submitContact } from '@/lib/api/public'
 
@@ -94,7 +95,7 @@ export default function TrialModalButton({ children, className, source = 'Xây K
         {children}
       </button>
 
-      {open && (
+      {open && createPortal(
         <div
           className="fixed inset-0 z-[300] flex items-center justify-center p-4"
           role="dialog"
@@ -242,7 +243,8 @@ export default function TrialModalButton({ children, className, source = 'Xây K
               </>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   )
