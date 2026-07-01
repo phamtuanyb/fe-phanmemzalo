@@ -1,20 +1,20 @@
 "use client"
 
-import { getEmojiForPost } from "@/lib/public-content"
-import { cn } from "@/lib/utils"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { useState, useRef, useCallback, useEffect } from "react"
-import { MegaMenuColumn, MegaMenuConfig } from "./config"
-import Hamburger from "./Hamburger"
-import MegaMenuTrigger from "./MegaMenuTrigger"
-import MobileMenu from "./MobileMenu"
-import NavLinkPublic from "./NavLinkPublic"
-import { Category, MenuItem, Post } from "@/types"
-import Image from "next/image"
-import { AI_AGENT_URL, SERVICES_URL, NEWS_SLUGS } from "@/constants/app.constants"
-import NewsMegaMenuTrigger from "./NewsMegaMenuTrigger"
-import XayKenhMegaMenuTrigger from "./XayKenhMegaMenuTrigger"
+import { AI_AGENT_URL, NEWS_SLUGS, SERVICES_URL } from "@/constants/app.constants";
+import { getEmojiForPost } from "@/lib/public-content";
+import { cn } from "@/lib/utils";
+import { Category, MenuItem, Post } from "@/types";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { MegaMenuColumn, MegaMenuConfig } from "./config";
+import Hamburger from "./Hamburger";
+import MegaMenuTrigger from "./MegaMenuTrigger";
+import MobileMenu from "./MobileMenu";
+import NavLinkPublic from "./NavLinkPublic";
+import NewsMegaMenuTrigger from "./NewsMegaMenuTrigger";
+import XayKenhMegaMenuTrigger from "./XayKenhMegaMenuTrigger";
 
 const isAiAgentMenu = (item: MenuItem) => {
     if (item.url === '/ai-agent' || item.url === '/xaykenh-ai' || item.url === `/${AI_AGENT_URL}`) return true
@@ -80,7 +80,14 @@ const HeaderClient = ({
 }: HeaderClientProps) => {
     const pathname = usePathname()
     const [mobileOpen, setMobileOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
     const { activeMenu, show, hide, reset } = useMegaMenu()
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 10)
+        window.addEventListener('scroll', onScroll, { passive: true })
+        return () => window.removeEventListener('scroll', onScroll)
+    }, [])
 
     const buildMegaMenuConfig = useCallback((item: MenuItem): MegaMenuConfig => {
         const isAi = isAiAgentMenu(item)
@@ -182,18 +189,18 @@ const HeaderClient = ({
 
     return (
         <>
-            <nav className="sticky top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-xl border-b border-vs-gray-200">
+            <nav className={`sticky top-0 left-0 right-0 z-[100] bg-white/95 backdrop-blur-xl border-b border-vs-gray-200 transition-shadow duration-300 ${scrolled ? 'shadow-md' : ''}`}>
                 <div className="container mx-auto px-4 sm:px-6 h-full flex items-center justify-between gap-3 sm:gap-8">
                     {/* Logo */}
                     <Link href="/" className="flex-shrink-0">
                         <Image
-                            src="/logo-ngang.png"
+                            src="/logo.png"
                             alt="MKT Software"
                             width={170}
                             height={88}
                             className={cn(`w-auto object-contain`)}
                             priority
-                            style={{ height: 52 }}
+                            style={{ height: 65 }}
                         />
                     </Link>
 

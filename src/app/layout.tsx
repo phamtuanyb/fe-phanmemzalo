@@ -36,6 +36,10 @@ export async function generateMetadata(): Promise<Metadata> {
     title: { default: 'ZMarketing — Biến Zalo thành phòng kinh doanh tự động', template: `%s | ${siteName}` },
     description:
       'Nền tảng quản lý hàng trăm tài khoản Zalo: hộp thư hợp nhất, CRM gắn tag khách hàng, gửi tin hàng loạt an toàn và báo cáo hiệu suất từng nhân viên. Dùng thử miễn phí 7 ngày.',
+    icons: {
+      icon: '/favicon.png',
+      shortcut: '/favicon.png',
+    },
     openGraph: {
       siteName,
       type: 'website',
@@ -83,7 +87,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="vi" className={`${manrope.variable} ${beVietnamPro.variable}`}>
-      <body className={`${manrope.className} bg-white text-vs-dark antialiased overflow-x-hidden`}>
+      <body className={`${manrope.className} bg-white text-vs-dark antialiased`} style={{ overflowX: 'clip' }}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}

@@ -45,9 +45,18 @@ export default function TrialModal() {
   }, [])
 
   useEffect(() => {
-    if (open) document.body.style.overflow = 'hidden'
-    else document.body.style.overflow = ''
-    return () => { document.body.style.overflow = '' }
+    if (open) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
+      document.body.style.paddingRight = `${scrollbarWidth}px`
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.paddingRight = ''
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.paddingRight = ''
+      document.body.style.overflow = ''
+    }
   }, [open])
 
   function close() {
