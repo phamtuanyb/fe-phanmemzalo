@@ -1,0 +1,93 @@
+# ZMarketing — Phần Mềm Zalo Marketing cho Doanh Nghiệp Việt Nam
+
+> ZMarketing là nền tảng quản lý Zalo Marketing toàn diện, giúp doanh nghiệp vận hành hàng trăm tài khoản Zalo, chăm sóc khách hàng tự động và đo lường hiệu suất từng nhân viên kinh doanh.
+
+Website: https://phanmemzalo.com
+Đơn vị phát triển: MKT Software
+Kinh nghiệm: 15+ năm trong lĩnh vực phần mềm marketing
+Khách hàng: 100.000+ doanh nghiệp và đối tác tại Việt Nam
+Hỗ trợ: 24/7 qua Zalo, hotline và cộng đồng 100.000+ thành viên
+
+---
+
+## Sản phẩm chính
+
+### ZMarketing — Phần mềm Zalo Marketing
+URL: https://phanmemzalo.com
+
+ZMarketing là phần mềm quản lý Zalo Marketing dành cho doanh nghiệp SME tại Việt Nam. Các tính năng chính:
+- Hộp thư hợp nhất: quản lý tin nhắn từ hàng trăm tài khoản Zalo trên một màn hình
+- CRM gắn tag khách hàng: phân loại, theo dõi và chăm sóc khách hàng theo từng giai đoạn
+- Gửi tin hàng loạt an toàn: gửi tin nhắn số lượng lớn với cơ chế giãn cách, tránh bị khóa tài khoản
+- Proxy riêng từng tài khoản: mỗi tài khoản Zalo được cấp proxy độc lập để bảo vệ an toàn
+- Báo cáo hiệu suất: theo dõi KPI từng nhân viên kinh doanh theo thời gian thực
+- Phân quyền 3 cấp: Admin, Quản lý, Nhân viên
+- Dùng thử miễn phí 7 ngày, không cần thẻ thanh toán
+
+### Xây Kênh AI
+URL: https://phanmemzalo.com/xaykenh/xaykenhai
+
+Phần mềm sản xuất video AI tự động đăng đa kênh. Tích hợp các mô hình AI tạo video hàng đầu (Kling, Veo 3, Sora). Phù hợp cho TikTok, YouTube Shorts, Facebook Reels, Instagram.
+
+### MKT Viral
+URL: https://phanmemzalo.com/xaykenh/mktviral
+
+Phần mềm khai thác và sản xuất video hàng loạt đa nền tảng. Tải video, chỉnh sửa tự động và xuất bản đồng loạt lên TikTok, YouTube, Facebook. Một thiết lập — hàng nghìn video.
+
+### MKT Page
+URL: https://phanmemzalo.com/xaykenh/mktpage
+
+Phần mềm quản lý hàng trăm Fanpage Facebook từ một Dashboard. Đăng bài hàng loạt, lập lịch tự động, đổi thông tin Page, theo dõi tiến trình 24/7.
+
+### MKT Affiliate
+URL: https://phanmemzalo.com/xaykenh/mktaffiliate
+
+Phần mềm xây dựng và vận hành hệ thống Affiliate Marketing đa nền tảng. Quản lý tài khoản, nội dung, video, link affiliate và tự động phân phối lên TikTok, Facebook, Instagram, YouTube Shorts, Threads.
+
+---
+
+## Các trang quan trọng
+
+- Trang chủ: https://phanmemzalo.com
+- Bộ công cụ Xây Kênh: https://phanmemzalo.com/xaykenh
+- Dịch vụ: https://phanmemzalo.com/dich-vu
+- Tin tức & Kiến thức: https://phanmemzalo.com/tin-tuc
+- Liên hệ & Tư vấn: https://phanmemzalo.com/lien-he
+- Sitemap: https://phanmemzalo.com/sitemap.xml
+
+---
+
+## Câu hỏi thường gặp
+
+**ZMarketing có bị khóa tài khoản Zalo không?**
+Không. ZMarketing cấp proxy riêng cho từng tài khoản, kết hợp cơ chế giãn cách và tốc độ gửi tùy chỉnh để mô phỏng thao tác người thật. Hệ thống được phát triển bởi đội ngũ hơn 15 năm kinh nghiệm nuôi tài khoản Zalo.
+
+**ZMarketing chạy trên nền tảng nào?**
+ZMarketing chạy hoàn toàn trên trình duyệt web (Web-based), không cần cài đặt phần mềm. Đăng nhập bằng cách quét mã QR giống Zalo trên máy tính.
+
+**Có được dùng thử miễn phí không?**
+Có. Dùng thử miễn phí 7 ngày với đầy đủ tính năng, kèm 30 phút hướng dẫn 1-1 từ đội ngũ hỗ trợ. Không cần nhập thẻ thanh toán.
+
+**ZMarketing khác gì các công cụ Zalo giá rẻ?**
+Công cụ giá rẻ chỉ dừng ở gửi tin. ZMarketing là hệ thống kinh doanh đầy đủ: hộp thư hợp nhất, CRM gắn tag, phân quyền 3 cấp, báo cáo hiệu suất. Dữ liệu khách hàng thuộc về doanh nghiệp, không nằm trong điện thoại nhân viên.
+
+**Chính sách hỗ trợ như thế nào?**
+Bảo hành và cập nhật phần mềm miễn phí trọn đời. Hỗ trợ kỹ thuật qua hotline, Zalo và cộng đồng hơn 100.000 thành viên.
+
+---
+
+## Đối tượng khách hàng
+
+- Doanh nghiệp SME bán hàng qua Zalo
+- Đội ngũ kinh doanh 5–200 người cần quản lý nhiều tài khoản Zalo
+- Agency marketing quản lý Zalo cho nhiều nhãn hàng
+- Nhà bán lẻ, spa, phòng khám, nhà hàng, bất động sản dùng Zalo chăm sóc khách hàng
+- Người muốn xây kênh nội dung trên TikTok, YouTube, Facebook bằng AI và tự động hóa
+
+---
+
+## Thông tin liên hệ
+
+Website: https://phanmemzalo.com
+Liên hệ tư vấn: https://phanmemzalo.com/lien-he
+Đăng ký dùng thử: https://khachhang.phanmemmkt.vn/vi/register
