@@ -16,6 +16,8 @@ interface Props {
   params: { slug: string }
 }
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://phanmemzalo.com'
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPost(params.slug).then(res => res.data).catch(() => null);
   if (!post) return { title: 'Bài viết không tồn tại' };
@@ -29,9 +31,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       type: 'article',
       images: post.thumbnail ? [post.thumbnail] : [],
+      publishedTime: post.publishedAt || post.createdAt,
+      modifiedTime: post.updatedAt || post.createdAt,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: post.thumbnail ? [post.thumbnail] : [],
     },
     alternates: {
-      canonical: `/tin-tuc/${params.slug}`
+      canonical: `${siteUrl}/tin-tuc/${params.slug}`
     }
   };
 }
@@ -69,8 +79,37 @@ const ArticleLayout = async ({ params }: Props) => {
     notFound()
   }
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: news.seoTitle || news.title,
+    description: news.seoDescription || news.excerpt || '',
+    image: news.thumbnail ? [news.thumbnail] : [],
+    datePublished: news.publishedAt || news.createdAt,
+    dateModified: news.updatedAt || news.createdAt,
+    url: `${siteUrl}/tin-tuc/${params.slug}`,
+    author: {
+      '@type': 'Organization',
+      name: 'ZMarketing',
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'ZMarketing',
+      url: siteUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/logo-ngang.png`,
+      },
+    },
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <PageHero
         title="Tin Tức & Kiến Thức"
         breadcrumbs={[

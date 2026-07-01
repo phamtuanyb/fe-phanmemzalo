@@ -6,7 +6,7 @@ import { getTrackingConfig } from '@/lib/api/public'
 
 const manrope = Manrope({
   subsets: ['latin', 'vietnamese'],
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700', '800'],
   variable: '--font-manrope',
   display: 'swap',
 })
@@ -14,7 +14,7 @@ const manrope = Manrope({
 // Font cho landing trang chủ (mẫu ZMarketing) — expose qua biến --font-bvp
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ['latin', 'vietnamese'],
-  weight: ['400', '500', '600', '700', '800', '900'],
+  weight: ['400', '700', '800'],
   variable: '--font-bvp',
   display: 'swap',
 })
@@ -87,6 +87,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="vi" className={`${manrope.variable} ${beVietnamPro.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://api.phanmemzalo.com" />
+      </head>
       <body className={`${manrope.className} bg-white text-vs-dark antialiased`} style={{ overflowX: 'clip' }}>
         <script
           type="application/ld+json"

@@ -29,7 +29,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const [categoriesRes, postsRes, servicesRes] = await Promise.all([
       getCategories().catch(() => ({ data: [] })),
-      getPosts().catch(() => ({ data: [] })),
+      getPosts({ limit: 500 }).catch(() => ({ data: [] })),
       getCategoryPosts(SERVICES_SLUGS, { limit: 100 }).catch(() => ({ data: [] })),
     ])
 
